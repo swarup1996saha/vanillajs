@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theme Switcher</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+</head>
+<body>
+    <div class="hero">
+        <nav>
+            <img src="./img/logo.png" alt="" class="logo">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Hire Me</a></li>
+            </ul>
+            <img src="./img/moon.png" alt="" id="icon">
+        </nav>
+        <div class="info">
+            <h1>I'm <span>Kate </span>  Amelia</h1>
+            <p>This is my offecial portfolio website to showcase my all works related to web <br> developement and UI design</p>
+            <a href="#">Download CV</a>
+        </div>
+        <div class="img-box">
+            <img src="./img/pattern.png" alt="" class="back-img">
+            <img src="./img/girl.png" alt="" class="main-img">
+        </div>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-behance"></i></a>
+            <a href="#"><i class="fab fa-dribbble"></i></a>
+        </div>
+    </div>
+    <script>
+         var icon = document.getElementById('icon');
+
+         if(localStorage.getItem("theme") == null){
+            localStorage.setItem("theme", "light");
+         }
+         
+         let localData = localStorage.getItem("theme");
+         if(localData== "light"){
+             icon.src = "./img/moon.png"
+             document.body.classList.remove("dark-theme")
+         }else if(localData=="dark"){
+            icon.src = "./img/sun.png"
+             document.body.classList.add("dark-theme")
+         }
+
+         icon.onclick = function(){
+             document.body.classList.toggle('dark-theme')
+             if(document.body.classList.contains('dark-theme')){
+                    icon.src = "./img/sun.png"
+                    localStorage.setItem("theme", "dark")
+             }else{
+                 icon.src = "./img/moon.png"
+                 localStorage.setItem("theme", "light")
+             }
+         }
+    </script>
+</body>
+</html>
