@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Lato', sans-serif;
+    background: #086575;
+    color: #ffffff;
+}
+
+h2{
+    font-size: 5rem;
+    font-weight: bold;
+    padding: 3rem;
+}
+img{
+    filter: drop-shadow(0 0 0.75rem crimson);
+    height: 50vh;
+}
+.coming-soon{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+.countdown{
+  display: flex;  
+  justify-content: space-around;
+  text-align: center;
+  padding: 2rem;
+}
+
+.day, .hour, .min, .sec{
+    font-size: 3rem;
+}
