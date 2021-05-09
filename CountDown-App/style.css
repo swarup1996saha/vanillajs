@@ -20,6 +20,7 @@ h2{
 img{
     filter: drop-shadow(0 0 0.75rem crimson);
     height: 50vh;
+    animation: spin 60s linear infinite;;
 }
 .coming-soon{
     min-height: 100vh;
@@ -38,3 +39,12 @@ img{
 .day, .hour, .min, .sec{
     font-size: 3rem;
 }
+
+@keyframes spin {
+    0% { 
+        transform: rotate(0deg); 
+    }
+    100% { 
+        transform: rotate(360deg); 
+    }
+  }
